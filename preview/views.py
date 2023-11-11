@@ -1,12 +1,20 @@
 import os, marko
 from django.http import HttpResponse
-
-
+from django.shortcuts import render
 
 def index(request):
 
 	f = open('content/preview/new-publishing-attempt.txt','r')
-	text = f.read()
-	print(marko.convert(text))
+	body = marko.convert(f.read())
 
-	return HttpResponse(marko.convert(text))
+	context = {
+	    "author": "Gaurav Singhal",
+	    "website": {
+	        "domain": "https://pluralsight.com",
+	        "views": 200
+	    },
+	    "odds": [1, 3, 5],
+	    "body": body
+	}
+	return render(request, "index.html", context)
+

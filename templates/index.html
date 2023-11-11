@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Markdown Preview</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="shortcut icon" href="/favicon.ico" >
+<link rel="stylesheet" href="{%static 'medium.css' %}" type="text/css" />
+<link rel="stylesheet" href="{%static 'preview.css' %}" type="text/css" />
+<link href="https://g1.nyt.com/fonts/css/web-fonts.5810def60210a2fa7d0848f37e3fa048bb6147b1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div id="main">
+
+	<div class="blogentry"><div class="blogbody">	
+
+		{{ body | safe}}
+
+	</div></div>
+
+</div>
+
+</body></html>
