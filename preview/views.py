@@ -1,11 +1,15 @@
-import os, marko
+import os, marko, glob
 from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
 
-	f = open('_external/content/preview/new-publishing-attempt.txt','r')
-	body = marko.convert(f.read())
+	files = glob.glob('_external/content/preview/*.txt')
+	bodies = []
+	for file in files:
+		f = open(file,'r')
+		bodies.append(f.read())
+	body = marko.convert("\n".join(bodies))
 
 	context = {
 	    "author": "Gaurav Singhal",
