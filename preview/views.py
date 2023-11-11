@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 def index(request):
 
-	f = open('content/preview/new-publishing-attempt.txt','r')
+	f = open('_external/content/preview/new-publishing-attempt.txt','r')
 	body = marko.convert(f.read())
 
 	context = {
