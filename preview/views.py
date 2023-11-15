@@ -1,10 +1,13 @@
 import os, marko, glob
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.conf import settings
 
 def index(request):
 
-	files = glob.glob('_external/content/preview/*.txt')
+	 # = os.path.dirname(__file__) + "../"
+
+	files = glob.glob(str(settings.BASE_DIR) + '/_external/content/preview/*.txt')
 	bodies = []
 	for file in files:
 		f = open(file,'r')
@@ -20,5 +23,7 @@ def index(request):
 	    "odds": [1, 3, 5],
 	    "body": body
 	}
+
+	# return HttpResponse("Hello, world. You're at some page, bruh." + str(settings.BASE_DIR))	
 	return render(request, "index.html", context)
 
