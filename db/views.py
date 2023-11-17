@@ -5,11 +5,18 @@ from django.conf import settings
 
 def index(request):
 
-	files = glob.glob(str(settings.BASE_DIR) + '/_external/content/preview/*.txt')
+	files = glob.glob(str(settings.BASE_DIR) + '/_external/content/preview/**/*.txt', recursive=True)
+
 	bodies = []
+
 	for file in files:
 		f = open(file,'r')
+		f.read()
+
 		bodies.append(f.read())
+		break
+
+
 	body = marko.convert("\n".join(bodies))
 
 	context = {
@@ -19,9 +26,9 @@ def index(request):
 	        "views": 200
 	    },
 	    "odds": [1, 3, 5],
-	    "body": body
+	    "body": 'yo'
 	}
 
 	# return HttpResponse("Hello, world. You're at some page, bruh." + str(settings.BASE_DIR))	
-	return render(request, "preview.html", context)
+	return render(request, "db.html", context)
 
