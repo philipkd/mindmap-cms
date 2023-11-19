@@ -1,0 +1,86 @@
+body {
+	font-size: 20px;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+p.essay b.title a {
+	text-decoration: none;
+	color: black;
+}
+
+p.essay b.title a:hover {
+	text-decoration: underline;
+	color: black;
+}
+
+.entry {
+	max-width: 600px;
+	margin: auto;
+	line-height: 150%;
+}
+
+.sig {
+    padding-left: 50px;
+}
+
+.site-title {
+	text-align: center;
+	font-size: 27px;
+}
+.site-title a {
+	color: black;
+	font-weight: normal;
+}
+.page-title {
+	font-size: 27px;
+	text-align: center;
+	font-weight: normal;
+}
+.site-title, .page-title {
+	margin-bottom: 25px;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+hr {
+	font-size: 12px;
+	border: none;
+	text-align: center;
+}
+
+hr:before {
+	content: "\2666\00a0\00a0\00a0\00a0\00a0\2666\00a0\00a0\00a0\00a0\00a0\2666";
+}
+
+blockquote {
+	border-left: 5px solid lightgrey;
+	margin-left: 0px;
+	padding-left: 10px;
+}
+
+#db {
+	float: left;
+	width: 300px;
+}
+.note-tags {
+	margin: .25in 0 .5in;
+	font-size: 90%;
+}
+.count {
+	font-size: 75%;
+}
+.expand-btn {
+	/*vertical-align: top;*/
+}
+.expand-btn a {
+	color: black;
+	text-decoration: none;
+}
