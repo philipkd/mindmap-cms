@@ -21,16 +21,16 @@
 
 		<b>Special Tags</b>
 		<ul>
-{% for index,row in special_tag_counts.iterrows() %}
-			<li><a href="?tag={{row[0]}}">{{row[0]}}</a> <span class="count">{{row[1]}}</span></li>
+{% for tag,count in special_tag_counts %}
+			<li><a href="?tag={{tag}}">{{tag}}</a> <span class="count">{{count}}</span></li>
 {% endfor %}
 		</ul>
 
 		<b>Tags</b>
 
 		<ul>
-{% for index,row in basic_tag_counts.iterrows() %}
-			<li><a href="?tag={{row[0]}}">{{row[0]}}</a> <span class="count">{{row[1]}}</span></li>
+{% for tag,count in basic_tag_counts %}
+			<li><a href="?tag={{tag}}">{{tag}}</a> <span class="count">{{count}}</span></li>
 {% endfor %}
 		</ul>
 

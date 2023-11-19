@@ -9,14 +9,18 @@ class Database:
 
 	@staticmethod
 	def get_tags(file):
-	    tags = list(map(lambda x: x[0],re.findall(r'#(.*?)([\. ]|$)',file)))
-	    if (re.search(r'/- ',file)):
-	        tags.append('_stbd')
-	    return tags		
+		tags = list(map(lambda x: x[0],re.findall(r'#(.*?)([\. ]|$)',file)))
+		if (re.search(r'/- ',file)):
+			tags.append('_stbd')
+		return tags
+
+	@staticmethod
+	def listify_df(df):
+		return df.agg(tuple,1).tolist()
 
 	def __init__(self):
 
-		NOTES_DIR = str(settings.BASE_DIR) + "/_external/content/db3/files/"
+		NOTES_DIR = str(settings.BASE_DIR) + "/" + "_external/content/db3/files/"
 		files = glob.glob(str(NOTES_DIR) + '**/*.txt', recursive=True)
 
 		df = pd.DataFrame(data=files,columns=['file'])
@@ -26,42 +30,28 @@ class Database:
 		self.df = df[df.apply(lambda x: False if '_pi' in x['tags'] else True,axis=1)]
 
 	def __tag_counts(self):
-		tag_counts = pd.Series([item for sublist in self.df['tags'] for item in sublist]).value_counts().to_frame(name='count').reset_index()
-		tag_counts = tag_counts.rename(columns={'index':'tag'})
+		tag_counts = pd.Series([item for sublist in self.df['tags'] for item in sublist]).value_counts()
+		tag_counts = tag_counts.to_frame(name='count').reset_index().rename(columns={'index':'tag'})
 		return tag_counts
 
 	def basic_tag_counts(self):
 		tag_counts = self.__tag_counts()
-		return tag_counts[~tag_counts.tag.str.contains('^_')]
+		tag_counts = tag_counts[tag_counts.tag.str.contains('^_')]
+		return self.listify_df(tag_counts)
 
 	def special_tag_counts(self):
 		tag_counts = self.__tag_counts()
-		print(tag_counts)
-		return tag_counts[tag_counts.tag.str.contains('^_')]
+		tag_counts = tag_counts[~tag_counts.tag.str.contains('^_')]
+		return self.listify_df(tag_counts)
 
 
 def index(request):
 
 	db = Database()
 
-	files = glob.glob(str(settings.BASE_DIR) + '/_external/content/preview/**/*.txt', recursive=True)
-
-	bodies = []
-
-	for file in files:
-		f = open(file,'r')
-		f.read()
-
-		bodies.append(f.read())
-		break
-
-
-	body = marko.convert("\n".join(bodies))
-
 	context = {
 	    "special_tag_counts": db.special_tag_counts(),
 	    "basic_tag_counts": db.basic_tag_counts(),
-	    "body": 'yo'
 	}
 
 	# return HttpResponse("Hello, world. You're at some page, bruh." + str(settings.BASE_DIR))	
