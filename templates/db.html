@@ -1,28 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-<meta name="viewport" content="width=600, initial-scale=1.0">
-
-<base href="/static/">
-<link rel="stylesheet" href="db.css">
-
-<title>Philosophistry</title>
-
-</head>
-
-<div class="site-title"><a href="/db3.php">Notes</a> by <a href='https://philipkd.com/'>Philip Dhingra</a></div>
-
-<div class="entry">
+{% include 'header.html' %}
 
 	<div id="db">
 
 		<b>Special Tags</b>
 		<ul>
 {% for tag,count in special_tag_counts %}
-			<li><a href="?tag={{tag}}">{{tag}}</a> <span class="count">{{count}}</span></li>
+			<li><a href="tag/{{tag}}">{{tag}}</a> <span class="count">{{count}}</span></li>
 {% endfor %}
 		</ul>
 
@@ -30,14 +13,10 @@
 
 		<ul>
 {% for tag,count in basic_tag_counts %}
-			<li><a href="?tag={{tag}}">{{tag}}</a> <span class="count">{{count}}</span></li>
+			<li><a href="tag/{{tag}}">{{tag}}</a> <span class="count">{{count}}</span></li>
 {% endfor %}
 		</ul>
 
 	</div>
 
-<br clear="all"/>
-<br/>
-<a href="https://licensebuttons.net/l/by/4.0/"><img src="https://licensebuttons.net/l/by/4.0/80x15.png"></a>
-
-</body></html>
+{% include 'footer.html' %}

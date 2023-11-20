@@ -44,6 +44,12 @@ class Database:
 		tag_counts = tag_counts[~tag_counts.tag.str.contains('^_')]
 		return self.listify_df(tag_counts)
 
+def tag(request,tag):
+	context = {
+		"tag": tag
+	}
+	return render(request, "tag.html", context)	
+
 
 def index(request):
 
