@@ -1,5 +1,29 @@
 {% include 'header.html' %}
 
-	{{tag}}
+<div class="page-title">{{tag}}</div>
+
+{% for note in notes %}
+
+<p class='essay'><b class='title'>{{note.title}}</a></b>
+
+<div class='note-body'>
+{{note.md | safe}}
+</div>
+
+<br/>
+
+	{% for tag in note.tags %}
+
+<a href='tag/{{tag}}'>{{tag}}</a>
+
+	{% endfor %}
+
+</p>
+
+{% endfor %}
+
+
+<i>{{notes|length}} entries</i>
+
 
 {% include 'footer.html' %}
