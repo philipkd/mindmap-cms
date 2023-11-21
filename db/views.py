@@ -1,4 +1,4 @@
-import os, marko, glob, re
+import os, glob, re
 import pandas as pd
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -100,8 +100,6 @@ def tag(request,tag):
     db = Database()
 
     notes = db.notes_by_tag(tag)
-    for note in notes:
-        note.md = marko.convert(note.text)
 
     context = {
         "tag": Tag(tag),

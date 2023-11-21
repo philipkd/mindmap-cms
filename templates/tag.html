@@ -1,3 +1,5 @@
+{% load db_extras %}
+
 {% include 'header.html' %}
 
 <div class="page-title">{{tag.display}}</div>
@@ -7,7 +9,7 @@
 <p class='essay'><b class='title'>{{note.title|safe}}</a></b>
 
 <div class='note-body'>
-{{note.md | safe}}
+{{note.text | md | safe}}
 </div>
 
 <br/>
