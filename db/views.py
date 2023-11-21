@@ -4,8 +4,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
 
-
-NOTES_DIR = str(settings.BASE_DIR) + "/" + "_external/content/db3/files/"
+DB_DIR = str(settings.BASE_DIR) + "/" + "_external/content/db3/"
+NOTES_DIR = DB_DIR + 'files/'
 
 class Note:
     @staticmethod
@@ -36,8 +36,8 @@ class Note:
 class Database:
 
     @staticmethod
-    def listify_df(df):
-        return df.agg(tuple,1).tolist()
+    def listify_tag_counts(df):
+        return df.agg(lambda x: [Tag(x[0]), x[1]],1).tolist()
 
     def __init__(self):
 
@@ -65,13 +65,35 @@ class Database:
 
     def basic_tag_counts(self):
         tag_counts = self.__tag_counts()
-        tag_counts = tag_counts[tag_counts.tag.str.contains('^_')]
-        return self.listify_df(tag_counts)
+        tag_counts = tag_counts[~tag_counts.tag.str.contains('^_')]
+        return self.listify_tag_counts(tag_counts)
 
     def special_tag_counts(self):
         tag_counts = self.__tag_counts()
-        tag_counts = tag_counts[~tag_counts.tag.str.contains('^_')]
-        return self.listify_df(tag_counts)
+        tag_counts = tag_counts[tag_counts.tag.str.contains('^_')]
+        return self.listify_tag_counts(tag_counts)
+
+class Tag:
+
+    f = open(DB_DIR + 'tags.txt')
+    tags = {}
+    for line in f.readlines():
+        split = line.strip().split(':')
+        tags[split[0]] = split[1]        
+
+    def __init__(self,tag):
+        self.tag = tag
+
+    def display(self):
+        if self.tag in self.tags:
+            return self.tags[self.tag]
+        return self.tag.capitalize()
+
+    def __str__(self):
+        return self.tag
+
+    def __repr__(self):
+        return f'Tag({self.tag})'
 
 def tag(request,tag):
 
@@ -82,8 +104,8 @@ def tag(request,tag):
         note.md = marko.convert(note.text)
 
     context = {
-        "tag": tag,
-        "notes": notes
+        "tag": Tag(tag),
+        "notes": notes,
     }
     return render(request, "tag.html", context)    
 

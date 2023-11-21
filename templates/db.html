@@ -5,7 +5,7 @@
 		<b>Special Tags</b>
 		<ul>
 {% for tag,count in special_tag_counts %}
-			<li><a href="tag/{{tag}}">{{tag}}</a> <span class="count">{{count}}</span></li>
+			<li><a href="tag/{{tag}}">{{tag.display}}</a> <span class="count">{{count}}</span></li>
 {% endfor %}
 		</ul>
 

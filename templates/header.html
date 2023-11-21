@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=600, initial-scale=1.0">
 
 {% load static %}
+<!-- {% load db_extras %} -->
 
 <link rel="stylesheet" href="{% static 'db.css' %}">
 
@@ -14,7 +15,9 @@
 
 </head>
 
-<div class="site-title"><a href="/db3.php">Notes</a> by <a href='https://philipkd.com/'>Philip Dhingra</a></div>
+<!-- {% current_time "%Y-%m-%d %I:%M %p" %} -->
+
+<div class="site-title"><a href="{% url 'index' %}">Notes</a> by <a href='https://philipkd.com/'>Philip Dhingra</a></div>
 
 <div class="entry">
 
