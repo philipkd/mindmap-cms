@@ -2,20 +2,18 @@
 
 	<div id="db">
 
-		<b>Special Tags</b>
-		<ul>
+		<b>Special Tags</b><p/>
+
 {% for tag,count in special_tag_counts %}
-			<li><a href="{% url 'tag' tag %}">{{tag.display}}</a> <span class="count">{{count}}</span></li>
+			<a href="{% url 'tag' tag %}">{{tag.display}}</a> <span class="count">{{count}}</span><br/>
 {% endfor %}
 		</ul>
 
-		<b>Tags</b>
+		<p/><b>Tags</b><p/>
 
-		<ul>
 {% for tag,count in basic_tag_counts %}
-			<li><a href="{% url 'tag' tag %}">{{tag}}</a> <span class="count">{{count}}</span></li>
+			<a href="{% url 'tag' tag %}">{{tag}}</a> <span class="count">{{count}}</span><br/>
 {% endfor %}
-		</ul>
 
 	</div>
 
