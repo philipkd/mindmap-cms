@@ -54,11 +54,15 @@ class Database:
         tag_counts = tag_counts.to_frame(name='count').reset_index().rename(columns={'index':'tag'})
         return tag_counts
 
-    def notes_by_tag(self,tag):
+    def notes_by_tag(self,tag,not_tag=None):
         notes = []
+
         df = self.df[self.df.apply(lambda x: True if tag in x['tags'] else False,axis=1)]
-        df.apply(lambda x: notes.append(Note(x['file'])), axis=1)
+        if not_tag:
+            df = df[df.apply(lambda x: False if not_tag in x['tags'] else True,axis=1)]
         
+        df.apply(lambda x: notes.append(Note(x['file'])), axis=1)
+
         dash_notes = list(filter(lambda x: x.title.startswith('-'), notes))
         other_notes = list(filter(lambda x: not x.title.startswith('-'), notes))        
         return sorted(dash_notes,key=lambda x: x.title) + sorted(other_notes,key=lambda x: x.title)
@@ -99,7 +103,10 @@ def tag(request,tag):
 
     db = Database()
 
-    notes = db.notes_by_tag(tag)
+    if tag == '_nystbd':
+        notes = db.notes_by_tag('_dev',not_tag='_stbd')
+    else:
+        notes = db.notes_by_tag(tag)
 
     context = {
         "tag": Tag(tag),
@@ -118,4 +125,3 @@ def index(request):
     }
 
     return render(request, "db.html", context)
-

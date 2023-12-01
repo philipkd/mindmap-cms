@@ -4,6 +4,7 @@
 
 		<b>Special Tags</b><p/>
 
+			<a href="{% url 'tag' '_nystbd' %}">Not Yet Initial Dev</a><br/>
 {% for tag,count in special_tag_counts %}
 			<a href="{% url 'tag' tag %}">{{tag.display}}</a> <span class="count">{{count}}</span><br/>
 {% endfor %}
