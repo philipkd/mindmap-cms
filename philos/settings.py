@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'db',
     'preview',
     'cv',
+    'philos',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'philos.urls'
 
 OPTIONS={
     'libraries': {
-        'db_tags': 'db.templatetags.db_extras',
+        'core_extras': 'philos.templatetags.extras',
     },
 }
 

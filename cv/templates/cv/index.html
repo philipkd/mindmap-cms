@@ -1,5 +1,9 @@
-{% load db_extras %}
+{% load extras %}
 
 {% for row in cv %}
-{{row.title}}: {{row.desc | md | safe}}
+<h2>{{row.title}}</h2>
+
+<ul>
+	<li>{{row.desc | md | safe}}</li>
+</ul>
 {% endfor %}
