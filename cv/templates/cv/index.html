@@ -1,0 +1,5 @@
+{% load db_extras %}
+
+{% for row in cv %}
+{{row.title}}: {{row.desc | md | safe}}
+{% endfor %}

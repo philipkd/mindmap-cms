@@ -112,7 +112,7 @@ def tag(request,tag):
         "tag": Tag(tag),
         "notes": notes,
     }
-    return render(request, "tag.html", context)    
+    return render(request, "db/tag.html", context)    
 
 
 def index(request):

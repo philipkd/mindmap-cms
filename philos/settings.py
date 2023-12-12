@@ -32,14 +32,15 @@ ALLOWED_HOSTS = ['new.philipkd.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'db',
-    'preview',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'db',
+    'preview',
+    'cv',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'philos.urls'
+
+OPTIONS={
+    'libraries': {
+        'db_tags': 'db.templatetags.db_extras',
+    },
+}
 
 TEMPLATES = [
     {
