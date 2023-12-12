@@ -124,4 +124,4 @@ def index(request):
         "basic_tag_counts": db.basic_tag_counts(),
     }
 
-    return render(request, "db.html", context)
+    return render(request, "db/index.html", context)

@@ -23,5 +23,5 @@ def index(request):
 	}
 
 	# return HttpResponse("Hello, world. You're at some page, bruh." + str(settings.BASE_DIR))	
-	return render(request, "preview.html", context)
+	return render(request, "preview/index.html", context)
 
