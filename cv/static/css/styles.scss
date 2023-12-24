@@ -1,5 +1,12 @@
+/*
+
+import sass
+sass.compile(dirname=('.','.'))
+
+*/
+
 body {
-    background-image: url('/bg_blogfabric.jpg');
+    background-image: url('../bg_blogfabric.jpg');
     background-repeat: repeat-x;
     background-color: white;
     margin: 0;
