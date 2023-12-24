@@ -9,15 +9,15 @@ from django.conf import settings
 def index(request):
 	context = {}
 
-	csv = str(settings.BASE_DIR) + "/" + "_external/content/CV/index.csv"
+	csv = str(settings.BASE_DIR) + "/" + "_external/content/CV/index-timeline.csv"
 
 	df = pd.read_csv(csv)
-	content = dict(df[df['cat'] != 'Hidden'])
+	content = dict(df[df['cat'] != 'Hidden'].reset_index())
 	i = 0
 	to_render = []
 	for row in content['desc']:
 	    
-	    to_render.append({'title': content['title'][i],'desc': content['desc'][i]})
+	    to_render.append({'title': content['year'][i],'desc': content['desc'][i]})
 	    i += 1
 	to_render
 
