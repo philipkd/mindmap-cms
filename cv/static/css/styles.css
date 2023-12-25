@@ -58,22 +58,21 @@ img {
   text-align: center;
   font-size: 18px;
   margin-bottom: 30px; }
-  #contact svg {
-    fill: #535357;
+  #contact img {
     margin-left: 9px;
     margin-right: 2px; }
-    #contact svg#email {
+    #contact img#email {
       height: 13px;
       width: 19px; }
-    #contact svg#linkedin {
+    #contact img#linkedin {
       height: 18px;
       width: 18px;
       vertical-align: -2px; }
-    #contact svg#dot {
+    #contact img#dot {
       height: 5px;
       width: 5px;
       vertical-align: 4px; }
-    #contact svg#sf {
+    #contact img#sf {
       height: 14px;
       width: 25px; }
   #contact img {
