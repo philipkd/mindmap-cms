@@ -8,7 +8,6 @@ media
 
 collectedstatic/
 docs/
-ext/
 
 # system #
 .DS_Store
