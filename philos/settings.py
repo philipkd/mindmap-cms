@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'preview',
     'cv',
     'philos',
+    'django_distill',
 ]
 
 MIDDLEWARE = [
