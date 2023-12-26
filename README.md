@@ -21,5 +21,5 @@ Django-based content management system for turning ideas into mindmaps into writ
 
 ## Publishing static HTML
 
-`python manage.py collectstatic`
+`python manage.py collectstatic` 
 `python manage.py distill-local docs`
