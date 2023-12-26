@@ -1,11 +1,12 @@
-# Second-Draft-CMS
+# Second Draft CMS
 
-Content management system for turning ideas into mindmaps into writing.
+Django-based content management system for turning ideas into mindmaps into writing.
 
-# Users
+# Publications
 
 * [Philosophistry](https://medium.com/philosophistry)
-* ... *coming soon*
+* [Dear Hannah](https://medium.com/dear-hannah)
+* ... *more soon*
 
 # Usage
 
