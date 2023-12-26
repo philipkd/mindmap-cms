@@ -6,5 +6,9 @@ __pycache__
 db.sqlite3
 media
 
+collectedstatic/
+docs/
+ext/
+
 # system #
 .DS_Store

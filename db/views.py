@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
 
-DB_DIR = str(settings.BASE_DIR) + "/" + "_external/content/db3/"
+DB_DIR = str(settings.BASE_DIR) + "/" + "ext/content/db3/"
 NOTES_DIR = DB_DIR + 'files/'
 
 class Note:

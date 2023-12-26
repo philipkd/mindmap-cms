@@ -5,7 +5,7 @@ from django.conf import settings
 
 def index(request):
 
-	files = glob.glob(str(settings.BASE_DIR) + '/_external/content/preview/*.txt')
+	files = glob.glob(str(settings.BASE_DIR) + '/ext/content/preview/*.txt')
 	bodies = []
 	for file in files:
 		f = open(file,'r')

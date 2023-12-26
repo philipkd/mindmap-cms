@@ -9,7 +9,7 @@ from django.conf import settings
 def index(request):
 	context = {}
 
-	csv = str(settings.BASE_DIR) + "/" + "_external/content/CV/index-timeline.csv"
+	csv = str(settings.BASE_DIR) + "/" + "ext/content/CV/index-timeline.csv"
 
 	df = pd.read_csv(csv)
 	content = dict(df[df['cat'] != 'Hidden'].reset_index())

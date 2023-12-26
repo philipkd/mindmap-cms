@@ -127,11 +127,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+STATIC_ROOT = BASE_DIR / 'collectedstatic'
+
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / '_external/mediumesque',
-    BASE_DIR / '_external/content/preview'
+    BASE_DIR / 'ext/mediumesque',
+    BASE_DIR / 'ext/content/preview'
 ]
 
 # Default primary key field type
