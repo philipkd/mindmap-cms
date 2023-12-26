@@ -10,15 +10,18 @@ body {
   background-color: white;
   margin: 0;
   color: #222;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 img {
-  border: 0px; }
+  border: 0px;
+}
 
 #main {
   width: 640px;
   margin: 80px auto;
-  text-align: left; }
+  text-align: left;
+}
 
 .thumb-mobile {
   width: 275px;
@@ -29,13 +32,17 @@ img {
   padding: 0 0 10px;
   border-radius: 10px;
   overflow: hidden;
-  display: none; }
-  .thumb-mobile a {
-    border-bottom: 0; }
-  .thumb-mobile img {
-    width: 275px; }
-  .thumb-mobile p {
-    margin: 5px; }
+  display: none;
+}
+.thumb-mobile a {
+  border-bottom: 0;
+}
+.thumb-mobile img {
+  width: 275px;
+}
+.thumb-mobile p {
+  margin: 5px;
+}
 
 .thumb {
   float: right;
@@ -44,71 +51,80 @@ img {
   padding-left: 10px;
   padding-top: 7px;
   text-align: center;
-  font-size: 16px; }
-  .thumb a {
-    border-bottom: 0; }
-  .thumb p {
-    margin-top: 7px; }
-  .thumb img {
-    border-radius: 10px;
-    width: 100%; }
+  font-size: 16px;
+}
+.thumb a {
+  border-bottom: 0;
+}
+.thumb p {
+  margin-top: 7px;
+}
+.thumb img {
+  border-radius: 10px;
+  width: 100%;
+}
 
 #contact {
   color: #535357;
   text-align: center;
   font-size: 18px;
-  margin-bottom: 30px; }
-  #contact img {
-    margin-left: 9px;
-    margin-right: 2px; }
-    #contact img#email {
-      height: 13px;
-      width: 19px; }
-    #contact img#linkedin {
-      height: 18px;
-      width: 18px;
-      vertical-align: -2px; }
-    #contact img#dot {
-      height: 5px;
-      width: 5px;
-      vertical-align: 4px; }
-    #contact img#sf {
-      height: 14px;
-      width: 25px; }
-  #contact img {
-    fill: red;
-    margin-left: 9px; }
-    #contact img#email {
-      height: 13px; }
-    #contact img#linkedin {
-      height: 18px;
-      vertical-align: -2px; }
-  #contact a {
-    color: #535357;
-    border-bottom: 0; }
+  margin-bottom: 30px;
+}
+#contact img {
+  margin-left: 9px;
+  margin-right: 2px;
+}
+#contact img#email {
+  height: 13px;
+  width: 19px;
+}
+#contact img#linkedin {
+  height: 18px;
+  width: 18px;
+  vertical-align: -2px;
+}
+#contact img#dot {
+  height: 5px;
+  width: 5px;
+  vertical-align: 4px;
+}
+#contact img#sf {
+  height: 14px;
+  width: 25px;
+}
+#contact a {
+  color: #535357;
+  border-bottom: 0;
+}
 
 img#cover {
-  width: 100%; }
+  width: 100%;
+}
 
 img#title {
   margin-bottom: 40px;
   width: 289px;
-  height: 51px; }
+  height: 51px;
+}
 
 #intro {
-  margin: 20px 0 40px; }
+  margin: 20px 0 40px;
+}
 
 ul {
   padding-left: 0px;
   list-style-type: none;
   margin-bottom: 30px;
-  margin-top: 8px; }
+  margin-top: 8px;
+}
 
 li {
-  margin-bottom: 18px; }
+  margin-bottom: 18px;
+}
 
 body {
-  font-size: 20px; }
+  font-size: 20px;
+}
 
 h1 {
   font-size: 45px;
@@ -116,43 +132,58 @@ h1 {
   margin-top: 10px;
   margin-bottom: 10px;
   font-weight: 200;
-  font-family: 'Helvetica Neue','Roboto'; }
+  font-family: "Helvetica Neue", "Roboto";
+}
 
 h2 {
   font-size: 24px;
   margin-top: 30px;
   margin-bottom: 12px;
-  font-weight: 500; }
+  font-weight: 500;
+}
 
 a {
   text-decoration: none;
-  border-bottom: 1px solid; }
-  a:visited {
-    color: #031a2f; }
-  a:link {
-    color: #23629f; }
+  border-bottom: 1px solid;
+}
+a:visited {
+  color: #031a2f;
+}
+a:link {
+  color: #23629f;
+}
 
 #resume {
-  line-height: 1.4; }
+  line-height: 1.4;
+}
 
 @media only screen and (max-width: 680px) {
   #main {
     width: 100%;
-    margin-top: 0; }
+    margin-top: 0;
+  }
   #resume,
   #intro {
-    padding: 0 20px; }
+    padding: 0 20px;
+  }
   img#title {
     padding: 0 20px;
     width: 80%;
     box-sizing: border-box;
     height: auto;
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+  }
   .thumb-mobile {
-    display: block; }
+    display: block;
+  }
   .thumb {
-    display: none; } }
-
+    display: none;
+  }
+}
 @media only screen and (max-width: 480px) {
   img#title {
-    width: 100%; } }
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
