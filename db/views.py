@@ -29,8 +29,16 @@ class Note:
         self.title = self.get_title(file)
         f = open(NOTES_DIR + file)
         self.text = f.read()
+    
+    @property
+    def year(self):
 
-    def __repr__(self):
+        if match := re.search('^\d{4}',self.file):
+            return match[0]
+        else:
+            return None
+
+    def __str__(self):
         return str(f'{self.title} ({len(self.text):d})')
 
 class Database:

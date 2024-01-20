@@ -6,7 +6,7 @@
 
 {% for note in notes %}
 
-<p class='essay'><b class='title'>{{note.title|safe}}</a></b>
+<p class='essay'><b class='title' title='{{note.file|safe}}'>{{note.title|safe}}</a></b>
 
 <div class='note-body'>
 {{note.text | md | safe}}
