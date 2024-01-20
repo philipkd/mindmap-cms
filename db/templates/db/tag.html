@@ -16,7 +16,7 @@
 
 	{% for tag in note.tags %}
 
-<a href='tag/{{tag}}'>{{tag}}</a>
+<a href="{% url 'tag' tag %}">{{tag}}</a>
 
 	{% endfor %}
 
