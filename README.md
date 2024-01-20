@@ -23,3 +23,7 @@ Django-based content management system for turning ideas into mindmaps into writ
 
 `python manage.py collectstatic`  
 `python manage.py distill-local docs`
+
+# TODO
+
+* "Notes" link doesn't go to root
